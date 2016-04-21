@@ -1,0 +1,24 @@
+
+
+boolean verificaDisponibilita(int codicePosto){
+boolean isDisponibile = true;
+for (i=0; i< postiOccupati.size(); i++){
+if (postiOccupati[i].getCodice(); == codicePosto){
+isDisponibile = false;
+}
+}
+return isDisponibile;
+}
+
+//oppure
+
+boolean verificaDisponibilita(int codicePosto){
+boolean isDisponibile = false;
+for (i=0; i< numeroPosti; i++){
+if (posti[i].getCodice(); == codicePosto)&&(!posti[i].isLibero){
+isDisponibile = false;
+}
+}
+return isDisponibile;
+}
+
