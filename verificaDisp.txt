@@ -1,0 +1,75 @@
+
+
+
+public class Livello{
+
+ArrayList<Posti> posti;
+
+[...]
+
+
+int getNumPostiDisponibili(){
+  int numPosti = posti.size();
+  int numPostiLiberi = 0;
+
+  for ( i = 0; i < numPosti, i++){
+    if ( posti.get(i).isLibero() ){
+    numPostiLiberi++;
+    }
+  }
+
+return numPostiLiberi;
+}
+
+int getNumPostiOccupatiMensili(){
+  int numPosti = posti.size();
+  int numPostiOccupatiMensili = 0;
+
+  for ( i= 0; i < numPosti; i++){
+  posto = posti.get(i);
+    if ( !posto.isLibero() )&&( posto.tipo.equals("mese") ){
+      numPostiOccupatiMensili++;  
+    }
+  }
+
+  return numPostiOccupatiMensili;
+}
+
+
+
+boolean verificaDisponibilita(){
+  boolean isDisponibile = true;
+  
+  if ( this.getNumPostiDisponibili() == 0 ){
+    isDisponibile = false;
+  }  
+  
+  return isDisponibile;
+}
+
+public class Garage{
+
+ArrayList<Livello> livelli;
+
+[...]
+
+boolean verificaDisponibilitaMensile(){
+  boolean isDisponibile = true;
+  int numLivelli = livelli.size();
+  int numPosti = 0;
+  int numPostiDisponibili = 0;
+  int numPostiOccupatiMensili = 0;
+  
+  for ( i= 0; i < numLivelli; i++ ){
+    numPosti = numPosti + livelli.get(i).getNumPosti();
+    numPostiDisponibili = numPostiDisponibili + livelli.get(i).getNumPostiDisponibili();
+    numPostiOccupatiMensili = numPostiOccupatiMensili  + livelli.get(i).getNumPostiOccupatiMensili();
+  }
+
+  if ( numPostiDisponibili == 0) || (numPostiOccupatiMensili >= numPosti/2){
+    isDisponibile = false;
+  }
+ 
+  return isDisponibile;
+}
+
