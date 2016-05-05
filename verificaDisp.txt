@@ -60,10 +60,11 @@ boolean verificaDisponibilitaMensile(){
   int numPostiDisponibili = 0;
   int numPostiOccupatiMensili = 0;
   
-  for ( i= 0; i < numLivelli; i++ ){
-    numPosti = numPosti + livelli.get(i).getNumPosti();
-    numPostiDisponibili = numPostiDisponibili + livelli.get(i).getNumPostiDisponibili();
-    numPostiOccupatiMensili = numPostiOccupatiMensili  + livelli.get(i).getNumPostiOccupatiMensili();
+  for ( i= 0; i < numLivelli; i++ ){ 
+    livello = livelli.get(i);
+    numPosti = numPosti + livello.getNumPosti();
+    numPostiDisponibili = numPostiDisponibili + livello.getNumPostiDisponibili();
+    numPostiOccupatiMensili = numPostiOccupatiMensili  + livello.getNumPostiOccupatiMensili();
   }
 
   if ( numPostiDisponibili == 0) || (numPostiOccupatiMensili >= numPosti/2){
